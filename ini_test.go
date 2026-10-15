@@ -15,7 +15,7 @@ func TestIni(t *testing.T) {
 	os.Setenv("LOCALAPPDATA", dir)
 	p := filepath.Join(dir, "RedM", "RedM.app", "CitizenFX.ini")
 	os.MkdirAll(filepath.Dir(p), 0o755)
-	os.WriteFile(p, []byte("\xEF\xBB\xBF[Game]\r\nIVPath=D:\\RDR2\r\nSavedBuildNumber=1311\r\nupdatechannel=production\r\n\r\n[Other]\r\nX=1\r\n"), 0o644)
+	os.WriteFile(p, []byte("\xEF\xBB\xBF[Game]\r\nIVPath=D:\\RDR2\r\nSavedBuildNumber=1311\r\nupdatechannel=production\r\nPoolSizesIncrease={\"CNetObjPedBase\":110}\r\nJunk=1\r\n\r\n[Other]\r\nX=1\r\n"), 0o644)
 	want := defaultRemote().CitizenFX
 	if checkIni(want).AllOk {
 		t.Fatal("ควรยังไม่ ok")
@@ -29,6 +29,12 @@ func TestIni(t *testing.T) {
 		if !strings.Contains(s, must) {
 			t.Fatalf("ไม่มี %q ใน\n%s", must, s)
 		}
+	}
+	if strings.Contains(s, "Junk=1") || strings.Contains(s, "CNetObjPedBase") {
+		t.Fatalf("บรรทัดอื่นใน [Game] ต้องถูกลบ\n%s", s)
+	}
+	if !strings.Contains(s, "DefaultBuild=1491") {
+		t.Fatalf("ไม่มี DefaultBuild\n%s", s)
 	}
 	if strings.Count(s, "1311") != 0 || strings.Count(strings.ToLower(s), "updatechannel=") != 1 {
 		t.Fatalf("ค่าเก่าไม่หาย\n%s", s)

@@ -20,16 +20,22 @@
       "short": "DrawableStore 50000"
     },
     {
-      "key": "ReplaceExecutable",
-      "value": "0",
-      "label": "ReplaceExecutable",
-      "short": "0"
+      "key": "DefaultBuild",
+      "value": "1491",
+      "label": "บิลด์เริ่มต้น",
+      "short": "1491"
     },
     {
       "key": "UpdateChannel",
       "value": "specific/feature/redm-physical-player-extension",
       "label": "ช่องอัปเดต",
       "short": "physical-player-ext"
+    },
+    {
+      "key": "ReplaceExecutable",
+      "value": "0",
+      "label": "ReplaceExecutable",
+      "short": "0"
     }
   ],
   "minVersion": "1.0.0",

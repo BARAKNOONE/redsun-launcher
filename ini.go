@@ -75,6 +75,15 @@ func checkIni(want []IniKV) IniState {
 	p, ex := iniPath()
 	cur := readIni(p)
 	st := IniState{Path: p, Exists: ex, AllOk: true}
+	allowed := map[string]bool{"ivpath": true}
+	for _, kv := range want {
+		allowed[strings.ToLower(kv.Key)] = true
+	}
+	for k := range cur {
+		if !allowed[k] {
+			st.AllOk = false // มีค่าอื่นค้างใน [Game] → เขียนใหม่ทั้ง section
+		}
+	}
 	for _, kv := range want {
 		ok := cur[strings.ToLower(kv.Key)] == kv.Value
 		if !ok {
@@ -133,25 +142,23 @@ func writeIni(want []IniKV) (string, error) {
 			}
 		}
 	}
-	for _, kv := range want {
-		found := false
-		for i := start + 1; i < end; i++ {
-			t := strings.TrimSpace(lines[i])
-			if j := strings.Index(t, "="); j > 0 && strings.EqualFold(strings.TrimSpace(t[:j]), kv.Key) {
-				lines[i] = kv.Key + "=" + kv.Value
-				found = true
-			}
-		}
-		if !found {
-			// แทรกท้าย section [Game] (ก่อนบรรทัดว่างท้าย section)
-			at := end
-			for at-1 > start && strings.TrimSpace(lines[at-1]) == "" {
-				at--
-			}
-			lines = append(lines[:at], append([]string{kv.Key + "=" + kv.Value}, lines[at:]...)...)
-			end++
+	// เขียน [Game] ใหม่ทั้งหมด: เก็บแค่ IVPath (ที่อยู่เกมของผู้เล่น) แล้วตามด้วยค่าที่เซิร์ฟกำหนดตามลำดับ
+	// บรรทัดอื่นใน [Game] ลบทิ้ง · section อื่นไม่แตะ
+	body := []string{}
+	for i := start + 1; i < end; i++ {
+		t := strings.TrimSpace(lines[i])
+		if j := strings.Index(t, "="); j > 0 && strings.EqualFold(strings.TrimSpace(t[:j]), "IVPath") {
+			body = append(body, t)
 		}
 	}
+	for _, kv := range want {
+		body = append(body, kv.Key+"="+kv.Value)
+	}
+	if end < len(lines) {
+		body = append(body, "")
+	}
+	rest := append([]string{}, lines[end:]...)
+	lines = append(append(append([]string{}, lines[:start+1]...), body...), rest...)
 	out := strings.Join(lines, "\r\n")
 	if !strings.HasSuffix(out, "\r\n") {
 		out += "\r\n"
