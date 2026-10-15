@@ -15,7 +15,7 @@
     },
     {
       "key": "PoolSizesIncrease",
-      "value": "{\"DrawableStore\":50000,\"InteriorProxy\":450}",
+      "value": "{\"CNetObjPedBase\":110}",
       "label": "ขนาดพูลโมเดล",
       "short": "DrawableStore 50000"
     },
@@ -36,23 +36,13 @@
   "closeOnPlay": true,
   "events": [
     {
-      "kicker": "กิจกรรมสุดสัปดาห์",
-      "title": "แข่งม้าข้ามเมือง · วาเลนไทน์ → สตรอว์เบอร์รี",
-      "desc": "ชิงรางวัลรวม $3,000 และตั๋วกาชาหีบตะวันแดง · ลงชื่อที่คอกม้าวาเลนไทน์ก่อนเริ่ม 30 นาที",
+      "kicker": "อยู่ในช่วง Beta Tester",
+      "title": "แล้วเจอกันเร็วๆนี้กับ Server ที่ทีมงานดูเเลดีเหมือนลูกค้าคนสำคัญ",
+      "desc": "",
       "at": 1792242000,
       "whenText": "เสาร์ 18 ต.ค. · 20:00",
       "place": "คอกม้าวาเลนไทน์",
-      "image": "",
-      "url": ""
-    },
-    {
-      "kicker": "บุกค่ายโจร",
-      "title": "นายอำเภอรับสมัครทีมบุกค่ายแก๊งงูหางกระดิ่ง",
-      "desc": "ทีม 4 คนขึ้นไป · ได้ใบนำจับ ×2 ต่อคน",
-      "at": 1792332000,
-      "whenText": "อาทิตย์ 19 ต.ค. · 21:30",
-      "place": "สำนักงานนายอำเภอ วาเลนไทน์",
-      "image": "",
+      "image": "https://media.discordapp.net/attachments/1409571728031744090/1560265356537495552/image.png?ex=6ad215d9&is=6ad0c459&hm=853f410c387b5bf58c0461e7639d0a659a6dcb7c487b02297052b20609bd2246&=&format=webp&quality=lossless&width=640&height=361",
       "url": ""
     }
   ],

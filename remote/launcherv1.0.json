@@ -1,0 +1,93 @@
+{
+  "server": {
+    "name": "REDSUN Roleplay",
+    "connect": "1.2.210.129:30120",
+    "status": "http://1.2.210.129:30120/dynamic.json",
+    "max": 2000,
+    "maintenance": false
+  },
+  "citizenfx": [
+    {
+      "key": "SavedBuildNumber",
+      "value": "1491",
+      "label": "เกมบิลด์",
+      "short": "1491"
+    },
+    {
+      "key": "PoolSizesIncrease",
+      "value": "{\"CNetObjPedBase\":110}",
+      "label": "ขนาดพูลโมเดล",
+      "short": "DrawableStore 50000"
+    },
+    {
+      "key": "ReplaceExecutable",
+      "value": "0",
+      "label": "ReplaceExecutable",
+      "short": "0"
+    },
+    {
+      "key": "UpdateChannel",
+      "value": "specific/feature/redm-physical-player-extension",
+      "label": "ช่องอัปเดต",
+      "short": "physical-player-ext"
+    }
+  ],
+  "minVersion": "1.0.0",
+  "closeOnPlay": true,
+  "events": [
+    {
+      "kicker": "กิจกรรมสุดสัปดาห์",
+      "title": "แข่งม้าข้ามเมือง · วาเลนไทน์ → สตรอว์เบอร์รี",
+      "desc": "ชิงรางวัลรวม $3,000 และตั๋วกาชาหีบตะวันแดง · ลงชื่อที่คอกม้าวาเลนไทน์ก่อนเริ่ม 30 นาที",
+      "at": 1792242000,
+      "whenText": "เสาร์ 18 ต.ค. · 20:00",
+      "place": "คอกม้าวาเลนไทน์",
+      "image": "",
+      "url": ""
+    },
+    {
+      "kicker": "บุกค่ายโจร",
+      "title": "นายอำเภอรับสมัครทีมบุกค่ายแก๊งงูหางกระดิ่ง",
+      "desc": "ทีม 4 คนขึ้นไป · ได้ใบนำจับ ×2 ต่อคน",
+      "at": 1792332000,
+      "whenText": "อาทิตย์ 19 ต.ค. · 21:30",
+      "place": "สำนักงานนายอำเภอ วาเลนไทน์",
+      "image": "",
+      "url": ""
+    }
+  ],
+  "news": [
+    {
+      "date": "15 ต.ค.",
+      "title": "งานครบ 7 เมือง · เหมืองทอง 3 ขั้น",
+      "text": "ทุกงานใช้พลังงานใน มีมินิเกมและโบนัส",
+      "url": ""
+    },
+    {
+      "date": "15 ต.ค.",
+      "title": "เมนูกลาง F1 · อันดับ · ภารกิจรายวัน",
+      "text": "กด F1 ในเกมเพื่อดูอาชีพและรางวัล",
+      "url": ""
+    },
+    {
+      "date": "15 ต.ค.",
+      "title": "ระวังโจรป่าดักปล้นนอกเมือง",
+      "text": "ล้มได้ ค้นศพรับใบนำจับไปขึ้นเงิน",
+      "url": ""
+    }
+  ],
+  "links": [
+    {
+      "t": "Discord",
+      "url": "https://discord.gg/REPLACE"
+    },
+    {
+      "t": "Facebook",
+      "url": "https://facebook.com/REPLACE"
+    },
+    {
+      "t": "กฎเซิร์ฟ",
+      "url": "https://REPLACE"
+    }
+  ]
+}

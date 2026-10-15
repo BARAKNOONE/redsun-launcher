@@ -11,7 +11,7 @@ var embeddedRemote []byte
 // ===== ค่าที่ทีมแก้ได้ (หรือใส่ตอน build ด้วย -ldflags "-X main.Version=1.0.1 -X main.Repo=owner/repo") =====
 var (
 	Version = "1.0.0"                         // เวอร์ชัน Launcher (ตรงกับ tag บน GitHub เช่น v1.0.0)
-	Repo    = "REPLACE_OWNER/redsun-launcher" // GitHub repo ที่โฮส Launcher + ไฟล์ remote/launcher.json
+	Repo    = "BARAKNOONE/redsun-launcher" // GitHub repo ที่โฮส Launcher + ไฟล์ remote/launcher.json
 	Branch  = "main"
 )
 
