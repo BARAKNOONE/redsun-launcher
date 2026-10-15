@@ -1,0 +1,26 @@
+# สร้าง RedsunLauncher.exe + .sha256 ทุกครั้งที่ push tag v* (เช่น v1.0.1) แล้วอัปโหลดขึ้น GitHub Release
+# Launcher ของผู้เล่นเช็ค release ล่าสุดตอนเปิด → เจอเวอร์ชันใหม่ = เด้งหน้าต่างอัปเดตให้เอง
+name: release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: '1.24' }
+      - name: build
+        env: { GOOS: windows, GOARCH: amd64, GOFLAGS: -mod=mod }
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          go build -trimpath -ldflags "-H windowsgui -s -w -X main.Version=${VER} -X main.Repo=${GITHUB_REPOSITORY}" -o RedsunLauncher.exe .
+          sha256sum RedsunLauncher.exe | cut -d' ' -f1 > RedsunLauncher.exe.sha256
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            RedsunLauncher.exe
+            RedsunLauncher.exe.sha256
