@@ -15,7 +15,7 @@
     },
     {
       "key": "PoolSizesIncrease",
-      "value": "{\"CNetObjPedBase\":110}",
+      "value": "{\"DrawableStore\":50000,\"InteriorProxy\":450}",
       "label": "ขนาดพูลโมเดล",
       "short": "DrawableStore 50000"
     },
@@ -55,8 +55,8 @@
     },
     {
       "date": "15 ต.ค.",
-      "title": "เมนูกลาง F1 · อันดับ · ภารกิจรายวัน",
-      "text": "กด F1 ในเกมเพื่อดูอาชีพและรางวัล",
+      "title": "เมนูกลาง F4 · อันดับ · ภารกิจรายวัน",
+      "text": "กด F4 ในเกมเพื่อดูอาชีพและรางวัล",
       "url": ""
     },
     {
