@@ -1,0 +1,68 @@
+{
+  "server": {
+    "name": "REDSUN Roleplay",
+    "connect": "125.24.176.53:30120",
+    "status": "http://125.24.176.53:30120/dynamic.json",
+    "max": 1000,
+    "maintenance": false
+  },
+  "citizenfx": [
+    {
+      "key": "UpdateChannel",
+      "value": "specific/feature/redm-physical-player-extension",
+      "label": "ช่องอัปเดต",
+      "short": "physical-player-ext"
+    }
+  ],
+  "minVersion": "1.0.4",
+  "closeOnPlay": true,
+  "events": [
+    {
+      "kicker": "อยู่ในช่วง Beta Tester",
+      "title": "แล้วเจอกันเร็วๆนี้กับ Server ที่ทีมงานดูเเลดีเหมือนลูกค้าคนสำคัญ",
+      "desc": "",
+      "at": 1792242000,
+      "whenText": "เสาร์ 18 ต.ค. · 20:00",
+      "place": "คอกม้าวาเลนไทน์",
+      "image": "https://media.discordapp.net/attachments/1409571728031744090/1560265356537495552/image.png?ex=6ad215d9&is=6ad0c459&hm=853f410c387b5bf58c0461e7639d0a659a6dcb7c487b02297052b20609bd2246&=&format=webp&quality=lossless&width=640&height=361",
+      "url": ""
+    }
+  ],
+  "news": [
+    {
+      "date": "15 ต.ค.",
+      "title": "งานครบ 7 เมือง · เหมืองทอง 3 ขั้น",
+      "text": "ทุกงานใช้พลังงานใน มีมินิเกมและโบนัส",
+      "url": ""
+    },
+    {
+      "date": "15 ต.ค.",
+      "title": "เมนูกลาง F4 · อันดับ · ภารกิจรายวัน",
+      "text": "กด F4 ในเกมเพื่อดูอาชีพและรางวัล",
+      "url": ""
+    },
+    {
+      "date": "15 ต.ค.",
+      "title": "ระวังโจรป่าดักปล้นนอกเมือง",
+      "text": "ล้มได้ ค้นศพรับใบนำจับไปขึ้นเงิน",
+      "url": ""
+    }
+  ],
+  "links": [
+    {
+      "t": "Discord",
+      "url": "https://discord.gg/REPLACE"
+    },
+    {
+      "t": "Facebook",
+      "url": "https://facebook.com/REPLACE"
+    },
+    {
+      "t": "กฎเซิร์ฟ",
+      "url": "https://REPLACE"
+    }
+  ],
+  "anticheat": {
+    "enabled": true
+  }
+}
